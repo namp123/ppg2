@@ -1,0 +1,42 @@
+The data comes from an online offering of the Taylor Manifest Anxiety Scale. At the end of the test users were asked if their answers were accurate and could be used for research, 76% said yes and have been published here.
+
+The following items were rated 1=True, 2=False (0=not answered):
+
+Q1. I do not tire quickly.
+Q2. I am troubled by attacks of nausea.
+Q8. I frequently notice my hand shakes when I try to do something.
+Q16. I sweat very easily even on cool days.
+Q18. I hardly ever notice my heart pounding and I am seldom short of breath.
+Q19. I feel hungry almost all the time.
+Q21. I have a great deal of stomach trouble.
+Q23. My sleep is fitful and disturbed.
+Q26. I am more sensitive than most other people.
+Q29. I am usually calm and not easily upset.
+Q37. I must admit that I have at times been worried beyond reason over something that really did not matter.
+Q41. I find it hard to keep my mind on a task or job.
+Q42. I am usually self-conscious.
+Q46. At times I think I am no good at all.
+Q49. I shrink from facing crisis of difficulty.
+
+gender. Chosen from a drop down menue (1=male, 2=female, 3=other; 0=none chosen)
+age. entered as a free response (ages<14 have been removed)
+
+-- CALCUALTED VALUES --
+
+in php:
+
+score. = ( $_POST['Q1'] != 1 )
+			   + ( $_POST['Q2'] == 1 )
+			   + ( $_POST['Q8'] == 1 )
+			   + ( $_POST['Q16'] == 1 )
+			   + ( $_POST['Q18'] == 1 )
+			   + ( $_POST['Q19'] == 1 )
+			   + ( $_POST['Q21'] == 1 )
+			   + ( $_POST['Q23'] == 1 )
+			   + ( $_POST['Q26'] == 1 )
+			   + ( $_POST['Q29'] != 1 )
+			   + ( $_POST['Q37'] == 1 )
+			   + ( $_POST['Q41'] == 1 )
+			   + ( $_POST['Q42'] == 1 )
+			   + ( $_POST['Q46'] == 1 )
+			   + ( $_POST['Q49'] == 1 );
